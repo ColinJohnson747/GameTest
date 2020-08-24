@@ -1,4 +1,4 @@
-/* Mongo Database
+/* Mongo Databasebide
  * - this is where we set up our connection to the mongo database
  */
 const mongoose = require("mongoose");
