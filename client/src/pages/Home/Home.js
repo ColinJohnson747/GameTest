@@ -35,16 +35,27 @@ function Home() {
         <Col size="md-4">
           <Card>
             <h1>Search</h1>
+            <h3>items</h3>
+            <h3>classes</h3>
+            <h3>Spells</h3>
           </Card>
         </Col>
         <Col size="md-4">
           <Card>
             <h1>Create</h1>
+            <h3>items</h3>
+            <h3>classes</h3>
+            <h3>Spells</h3>
+            <h3>Character</h3>
           </Card>
         </Col>
         <Col size="md-4">
           <Card>
             <h1>View</h1>
+            <h3>My Characters</h3>
+            <h3>My Spells</h3>
+            <h3>My items</h3>
+            <h3>My Classes</h3>
           </Card>
         </Col>
       </Row>

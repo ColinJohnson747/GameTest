@@ -69,14 +69,22 @@ function App() {
         </div>
       )}
       {!loggedIn && (
-        <div className="auth-wrapper" style={{ paddingTop: 40 }}>
-          <Route exact path="/" component={() => <LoginForm login={login} />} />
-          <Route
-            exact
-            path="/books"
-            component={() => <LoginForm user={login} />}
-          />
-          <Route exact path="/signup" component={SignupForm} />
+        <div>
+          <Nav user={user} logout={logout} />
+          <div className="auth-wrapper" style={{ paddingTop: 40 }}>
+            <Route exact path="/" component={Home} />
+            <Route
+              exact
+              path="/login"
+              component={() => <LoginForm login={login} />}
+            />
+            <Route
+              exact
+              path="/books"
+              component={() => <LoginForm user={login} />}
+            />
+            <Route exact path="/signup" component={SignupForm} />
+          </div>
         </div>
       )}
     </div>

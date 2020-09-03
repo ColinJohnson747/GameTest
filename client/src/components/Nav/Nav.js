@@ -5,9 +5,10 @@ import "./Nav.css";
 
 const Nav = (props) => {
   let greeting;
+  let loginStatus;
 
   if (props.user === null) {
-    greeting = <p>Hello guest</p>;
+    greeting = <p>Welcome guest</p>;
   } else if (props.user.firstName) {
     greeting = (
       <Fragment>
@@ -21,6 +22,19 @@ const Nav = (props) => {
       </Fragment>
     );
   }
+  if (props.user === null) {
+    loginStatus = (
+      <Link to="login" className="login">
+        Login/Signup
+      </Link>
+    );
+  } else {
+    loginStatus = (
+      <Link to="#" className="logout" onClick={props.logout}>
+        Logout
+      </Link>
+    );
+  }
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-success">
@@ -31,10 +45,7 @@ const Nav = (props) => {
       </Col>
       <Col size="md-6 sm-6">
         <div className="float-right">
-          {greeting} -{" "}
-          <Link to="#" className="logout" onClick={props.logout}>
-            Logout
-          </Link>
+          {greeting} {loginStatus}
         </div>
       </Col>
     </nav>
