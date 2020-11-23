@@ -7,9 +7,9 @@ import { Card } from "../../components/Card";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
+import SearchBar from "../../components/SearchBar";
 
-function Home() {
-  // Setting our component's initial state
+function Search() {
   const [formObject, setFormObject] = useState({});
   const formEl = useRef(null);
 
@@ -21,8 +21,6 @@ function Home() {
     setFormObject({ ...formObject, [name]: value });
   }
 
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
   function handleFormSubmit(event) {
     event.preventDefault();
   }
@@ -30,35 +28,13 @@ function Home() {
   return (
     <Container fluid>
       <Row>
-        <Col size="md-4">
-          <Card>
-            <h1>Search</h1>
-            <h3>items</h3>
-            <h3>classes</h3>
-            <h3>Spells</h3>
-          </Card>
-        </Col>
-        <Col size="md-4">
-          <Card>
-            <h1>Create</h1>
-            <h3>items</h3>
-            <h3>classes</h3>
-            <h3>Spells</h3>
-            <h3>Character</h3>
-          </Card>
-        </Col>
-        <Col size="md-4">
-          <Card>
-            <h1>View</h1>
-            <h3>My Characters</h3>
-            <h3>My Spells</h3>
-            <h3>My items</h3>
-            <h3>My Classes</h3>
-          </Card>
+        <Col size="md-8">
+          <h1>Search Page</h1>
+          <SearchBar />
         </Col>
       </Row>
     </Container>
   );
 }
 
-export default Home;
+export default Search;

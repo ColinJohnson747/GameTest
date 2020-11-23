@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import AUTH from "./utils/AUTH";
+import Search from "./pages/Search";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -63,6 +64,7 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/books" component={Home} />
               <Route exact path="/books/:id" component={Detail} />
+              <Route exact path="/search" component={Search} />
               <Route component={NoMatch} />
             </Switch>
           </div>
@@ -83,6 +85,7 @@ function App() {
               path="/books"
               component={() => <LoginForm user={login} />}
             />
+            <Route exact path="/search" component={Search} />
             <Route exact path="/signup" component={SignupForm} />
           </div>
         </div>
