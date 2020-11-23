@@ -2,7 +2,7 @@ const ObjectId = require("mongoose").Types.ObjectId;
 const db = require("../models");
 
 module.exports = {
-  find: function (req, res) {
+  findAll: function (req, res) {
     db.Item.find()
       .then((items) => {
         res.json(items);

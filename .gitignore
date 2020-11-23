@@ -81,3 +81,8 @@ Thumbs.db
 #JSON Data
 dndData.json
 itemSeed.json
+featSeed.json
+classSeed.json
+backgroundSeed.json
+spellSeed.json
+monsterSeed.json

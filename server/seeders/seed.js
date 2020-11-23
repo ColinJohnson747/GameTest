@@ -1,6 +1,6 @@
 let mongoose = require("mongoose");
 let db = require("../models");
-let itemSeed = require("../../itemSeed.json");
+let itemSeed = require("./seedData/itemSeed.json");
 
 mongoose.connect("mongodb://localhost/GameTest", {
   useNewUrlParser: true,
