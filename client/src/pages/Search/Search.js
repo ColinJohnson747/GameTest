@@ -12,8 +12,17 @@ import SearchBar from "../../components/SearchBar";
 function Search() {
   const [formObject, setFormObject] = useState({});
   const formEl = useRef(null);
+  const [items, setItems] = useState([]);
 
-  useEffect(() => {}, []);
+  /* For Getting and applying all Items */
+  useEffect(() => {
+    let mounted = true;
+    API.getItems().then((res) => {
+      if (mounted) {
+        setItems(res.data);
+      }
+    });
+  }, []);
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
