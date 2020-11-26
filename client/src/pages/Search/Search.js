@@ -22,6 +22,9 @@ function Search() {
         setItems(res.data);
       }
     });
+    return function cleanup() {
+      mounted = false;
+    };
   }, []);
 
   // Handles updating component state when the user types into the input field

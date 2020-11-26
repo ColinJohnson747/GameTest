@@ -9,4 +9,11 @@ module.exports = {
       })
       .catch((err) => res.status(422).json(err));
   },
+  create: function (req, res) {
+    db.Item.create(req.body)
+      .then((items) => {
+        res.json(items);
+      })
+      .catch((err) => res.status(422).json(err));
+  },
 };
