@@ -8,6 +8,7 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
 import SearchBar from "../../components/SearchBar";
+import SearchNav from "../../components/SearchNav";
 
 function Search() {
   const [formObject, setFormObject] = useState({});
@@ -42,7 +43,11 @@ function Search() {
       <Row>
         <Col size="md-8">
           <h1>Search Page</h1>
-          <SearchBar />
+        </Col>
+      </Row>
+      <Row>
+        <Col size="md-12 sm-12">
+          <SearchNav />
         </Col>
       </Row>
     </Container>
