@@ -1,9 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import API from "../../utils/API";
 function SearchBar() {
   // const [formObject, setFormObject] = useState({});
   const [search, setSearch] = useState("");
+  const [items, setItems] = useState("");
   let history = useHistory();
+
+  useEffect(() => {
+    let mounted = true;
+    API.getAllItems().then((res) => {
+      if (mounted) {
+        setItems(res.data);
+      }
+    });
+    return function cleanup() {
+      mounted = false;
+    };
+  }, []);
 
   const handleInputChange = (event) => {
     const { value } = event.target;
@@ -12,8 +26,10 @@ function SearchBar() {
 
   function submit(event) {
     event.preventDefault();
-    let url = "results/" + search;
-    history.push(url);
+    const search = event.target.value;
+    API.getItems(search).then((res) => {
+      setItems(res.data);
+    });
   }
 
   return (

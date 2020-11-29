@@ -9,6 +9,7 @@ import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
 import SearchBar from "../../components/SearchBar";
 import SearchNav from "../../components/SearchNav";
+import Nav from "../../components/Nav";
 
 function Search() {
   const [formObject, setFormObject] = useState({});
@@ -16,17 +17,6 @@ function Search() {
   const [items, setItems] = useState([]);
 
   /* For Getting and applying all Items */
-  useEffect(() => {
-    let mounted = true;
-    API.getItems().then((res) => {
-      if (mounted) {
-        setItems(res.data);
-      }
-    });
-    return function cleanup() {
-      mounted = false;
-    };
-  }, []);
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {

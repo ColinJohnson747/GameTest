@@ -16,4 +16,13 @@ module.exports = {
       })
       .catch((err) => res.status(422).json(err));
   },
+  findViaSearch: function (req, res) {
+    const regexSearch = req.params.search;
+
+    db.Item.find({ name: new RegExp(regexSearch, "i") })
+      .then((foundItems) => {
+        res.json(foundItems);
+      })
+      .catch((err) => res.status(422).json(err));
+  },
 };
