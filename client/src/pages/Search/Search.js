@@ -24,7 +24,8 @@ function Search() {
   let itemsToRender;
   if (items) {
     itemsToRender = items.map((items) => {
-      return <ResultCard key={items.id} data={items}></ResultCard>;
+      console.log(items.text);
+      return <ResultCard key={items._id} data={items}></ResultCard>;
     });
   }
 
