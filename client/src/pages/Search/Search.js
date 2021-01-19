@@ -17,9 +17,14 @@ function Search() {
   function handleFormSubmit(event) {
     event.preventDefault();
     const search = event.target.value;
-    API.getSearchedItems(search).then((res) => {
-      SetItems(res.data);
-    });
+    console.log(search);
+    if (search) {
+      API.getSearchedItems(search).then((res) => {
+        SetItems(res.data);
+      });
+    } else {
+      API.getAllItems().then((res) => SetItems(res.data));
+    }
   }
   let itemsToRender;
   if (items) {
