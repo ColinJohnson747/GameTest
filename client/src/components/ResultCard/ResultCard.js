@@ -74,12 +74,11 @@ const ResultCard = (props) => {
     <div>
       <div className="result-Card" id="result-card" style={style.div} key={_id}>
         <div className="itemName" style={style.itemName}>
-          <h1>{name}</h1>
+          <h2>{name}</h2>
         </div>
         <div className="detail" style={style.detail}>
           <p>{detail}</p>
         </div>
-        <hr className="hr" style={style.hr} />
         <div style={style.damage}>{damage}</div>
         <div style={style.damage}>{weaponRange}</div>
         <hr className="hr" style={style.hr} />
